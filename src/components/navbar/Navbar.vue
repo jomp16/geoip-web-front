@@ -1,43 +1,49 @@
 <template>
-    <section>
-        <b-field label="Name">
-            <b-input value="Kevin Garvey"></b-input>
-        </b-field>
+    <b-navbar fixed-top type="is-black">
+        <template slot="brand">
+            <b-navbar-item tag="router-link" :to="{ path: '/' }">
+                <img
+                        src="https://raw.githubusercontent.com/buefy/buefy/dev/static/img/buefy-logo.png"
+                        alt="Lightweight UI components for Vue.js based on Bulma"
+                >
+            </b-navbar-item>
+        </template>
+        <template slot="start">
+            <b-navbar-item href="#">
+                Home
+            </b-navbar-item>
+            <b-navbar-item href="#">
+                Documentation
+            </b-navbar-item>
+            <b-navbar-dropdown label="Info">
+                <b-navbar-item href="#">
+                    About
+                </b-navbar-item>
+                <b-navbar-item href="#">
+                    Contact
+                </b-navbar-item>
+            </b-navbar-dropdown>
+        </template>
 
-        <b-field label="Email"
-                 type="is-danger"
-                 message="This email is invalid">
-            <b-input type="email"
-                     value="john@"
-                     maxlength="30">
-            </b-input>
-        </b-field>
-
-        <b-field label="Username"
-                 type="is-success"
-                 message="This username is available">
-            <b-input value="johnsilver" maxlength="30"></b-input>
-        </b-field>
-
-        <b-field label="Password"
-                 type="is-warning"
-                 :message="['Password is too short', 'Password must have at least 8 characters']">
-            <b-input value="123" type="password" maxlength="30"></b-input>
-        </b-field>
-
-        <b-field label="Subject">
-            <b-select placeholder="Select a subject">
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-            </b-select>
-        </b-field>
-    </section>
+        <template slot="end">
+            <b-navbar-item tag="div">
+                <div class="buttons">
+                    <a class="button is-primary">
+                        <strong>Sign up</strong>
+                    </a>
+                    <a class="button is-light">
+                        Log in
+                    </a>
+                </div>
+            </b-navbar-item>
+        </template>
+    </b-navbar>
 </template>
 
 <script lang="ts">
     import {Component, Vue} from 'vue-property-decorator';
 
     @Component
-    export default class GeoIpSearch extends Vue {
+    export default class Navbar extends Vue {
     }
 </script>

@@ -1,18 +1,29 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+    <section>
+        <Navbar></Navbar>
+        <div class="container">
+            <GeoIpSearch></GeoIpSearch>
+        </div>
+    </section>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+<script lang='ts'>
+    import {Component, Vue} from 'vue-property-decorator';
+    import GeoIpSearch from '@/components/geoip/GeoIpSearch.vue';
+    import Navbar from '@/components/navbar/Navbar.vue';
 
-@Component({
-  components: {
-    HelloWorld,
-  },
-})
-export default class Home extends Vue {}
+    @Component({
+        components: {
+            GeoIpSearch,
+            Navbar,
+        },
+    })
+    export default class Home extends Vue {
+    }
 </script>
+
+<style scoped lang="scss">
+    .container {
+        margin-top: 20px;
+    }
+</style>
