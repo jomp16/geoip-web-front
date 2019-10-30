@@ -1,7 +1,13 @@
 {
   "geoip": {
     "domain_or_addresses": "Domínios ou endereços IP",
-    "search_domain_or_addresses": "Procurar por domínios ou endereços IP"
+    "search_domain_or_addresses": "Procurar por domínios ou endereços IP",
+    "table": {
+      "ip": "IP",
+      "asn": "ASN",
+      "ptr": "PTR",
+      "city_state_country": "Cidade / Estado / País"
+    }
   },
   "navbar": {
     "language": "Linguagem",
