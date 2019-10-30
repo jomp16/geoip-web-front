@@ -1,0 +1,13 @@
+{
+  "geoip": {
+    "domain_or_addresses": "Domínios ou endereços IP",
+    "search_domain_or_addresses": "Procurar por domínios ou endereços IP"
+  },
+  "navbar": {
+    "language": "Linguagem",
+    "language_title": {
+      "english_us": "Inglês (EUA)",
+      "portuguese_br": "Português (Brasil)"
+    }
+  }
+}
