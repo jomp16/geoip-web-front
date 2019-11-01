@@ -18,15 +18,30 @@
                 </b-table-column>
 
                 <b-table-column :label="$t('geoip.table.ptr')" width="400">
-                    {{ props.row.ip.ptr }}
+                    <label v-if="props.row.ip.ptr !== undefined && props.row.ip.ptr !== null">
+                        {{ props.row.ip.ptr }}
+                    </label>
+                    <label v-else>
+                        {{ $t('geoip.error.no_ptr') }}
+                    </label>
                 </b-table-column>
 
                 <b-table-column :label="$t('geoip.table.asn')" width="400">
-                    {{ props.row.asn.number }} - {{ props.row.asn.name }}
+                    <label v-if="props.row.asn !== undefined && props.row.asn !== null">
+                        {{ props.row.asn.number }} - {{ props.row.asn.name }}
+                    </label>
+                    <label v-else>
+                        {{ $t('geoip.error.no_asn') }}
+                    </label>
                 </b-table-column>
 
                 <b-table-column :label="$t('geoip.table.city_state_country')" width="300">
-                    {{ props.row.city.name }} / {{ props.row.city.state }} / {{ props.row.city.country }}
+                    <label v-if="props.row.city !== undefined && props.row.city !== null">
+                        {{ props.row.city.name }} / {{ props.row.city.state }} / {{ props.row.city.country }}
+                    </label>
+                    <label v-else>
+                        {{ $t('geoip.error.no_city') }}
+                    </label>
                 </b-table-column>
             </template>
         </b-table>

@@ -7,6 +7,11 @@
       "asn": "ASN",
       "ptr": "PTR",
       "city_state_country": "City / State / Country"
+    },
+    "error": {
+      "no_ptr": "No PTR data",
+      "no_asn": "No ASN data",
+      "no_city": "No city data"
     }
   },
   "navbar": {
