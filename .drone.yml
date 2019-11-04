@@ -1,0 +1,31 @@
+kind: pipeline
+type: docker
+name: default
+
+clone:
+  depth: 1
+
+steps:
+  - name: build-test
+    image: node:lts-alpine
+    commands:
+      - CI=true yarn build
+
+  - name: upload
+    image: plugins/s3-sync
+    settings:
+      bucket: nginx
+      access_key:
+        from_secret: aws_access_key_id
+      secret_key:
+        from_secret: aws_secret_access_key
+      source: dist/
+      target: /geo.cgnat.net/
+      delete: true
+      path_style: true
+      endpoint: https://minio.rwx.ovh
+
+trigger:
+  event:
+    - push
+    - tag
