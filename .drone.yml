@@ -9,7 +9,7 @@ steps:
   - name: build-test
     image: node:lts-alpine
     commands:
-      - yarn install --production
+      - yarn
       - CI=true yarn build
 
   - name: upload
