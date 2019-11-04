@@ -25,6 +25,24 @@ steps:
       delete: true
       path_style: true
       endpoint: https://minio.rwx.ovh
+    when:
+      event: tag
+
+  - name: deploy
+    image: appleboy/drone-ssh
+    settings:
+      host:
+        from_secret: ssh_server
+      username:
+        from_secret: ssh_user
+      password:
+        from_secret: ssh_password
+      port:
+        from_secret: ssh_port
+      script:
+        - sh /home/jomp16/update_geoip.sh
+    when:
+      event: tag
 
 trigger:
   event:
